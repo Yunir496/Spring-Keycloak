@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8081/realms/emobile/protocol/openid-connect/certs
+
+app:
+  keycloak:
+    server-url: http://localhost:8081
+    admin-realm: master
+    admin-username: admin
+    admin-password: admin
+    target-realm: emobile
+    client-id: spring-keycloak-app
